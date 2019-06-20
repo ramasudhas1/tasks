@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx
+  labels: 
+    name: nginx
+spec:
+  ports:
+    - name: http
+      nodePort: 32555
+      port: 80
+      targetPort: 80
+  selector: 
+    name: nginx
+    version: "green"
+  type: NodePort
