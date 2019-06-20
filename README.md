@@ -1,6 +1,5 @@
 # tasks
 
-NOTES:
 Task: Level#2
 Azure: Infrastructure used
 Terraform: Used to provision the infrastructure
