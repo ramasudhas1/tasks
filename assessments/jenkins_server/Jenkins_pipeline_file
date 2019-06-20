@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('kubectl test') {
+            steps {
+                sh 'kubectl get nodes'
+                           }
+        }
+        stage('Helm test before') {
+            steps {
+                sh 'helm ls'
+                           }
+        }
+        stage('Deploy Tomcat') {
+            steps {
+                sh 'helm upgrade --install tomcat /opt/tomcat'
+                           }
+        }
+             stage('Helm test after') {
+            steps {
+                sh 'helm ls'
+                           }
+        }
+    }
+
+}
